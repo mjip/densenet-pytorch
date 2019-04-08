@@ -82,11 +82,11 @@ def main():
 
     kwargs = {'num_workers': 1, 'pin_memory': True}
     train_loader = torch.utils.data.DataLoader(
-        datasets.CIFAR10('../data', train=True, download=True,
+        datasets.CIFAR10('data', train=True, download=True,
                          transform=transform_train),
         batch_size=args.batch_size, shuffle=True, **kwargs)
     val_loader = torch.utils.data.DataLoader(
-        datasets.CIFAR10('../data', train=False, transform=transform_test),
+        datasets.CIFAR10('data', train=False, transform=transform_test),
         batch_size=args.batch_size, shuffle=True, **kwargs)
 
     # create model
